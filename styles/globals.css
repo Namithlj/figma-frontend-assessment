@@ -1,0 +1,105 @@
+:root{
+  --bg:#FAFAFB;
+  --card:#FFFFFF;
+  --muted:#6B6B6B;
+  --accent:#8B5E4A;
+  --border:#E8E6E4;
+  --pill:#F5F3F2;
+  --brand:#6A3F2B;
+  --shadow: rgba(32,32,32,0.06);
+}
+*{box-sizing:border-box}
+html,body,#__next{height:100%}
+body{margin:0;font-family:Roboto, system-ui, -apple-system, 'Segoe UI', Arial;color:#222;background:var(--bg);-webkit-font-smoothing:antialiased}
+
+h1,h2,h3,h4{font-family:Merriweather, Georgia, serif;color:var(--brand);margin:0}
+
+.page-root{display:flex;flex-direction:column;align-items:center;padding:18px}
+.topbar{width:100%;max-width:420px;display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+.logo{height:28px}
+.sign-btn{background:transparent;border:1px solid var(--border);padding:8px 12px;border-radius:10px;color:var(--brand);font-weight:500}
+
+.bottom-nav{position:fixed;left:50%;transform:translateX(-50%);bottom:8px;width:420px;max-width:100%;display:flex;gap:6px;justify-content:space-around;padding:8px 12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);background:#fff;border-radius:12px}
+.nav-btn{background:transparent;border:none;padding:8px 10px;border-radius:8px;color:var(--muted);cursor:pointer}
+.nav-btn.active{color:var(--accent);font-weight:700}
+
+.container{width:100%;max-width:420px;background:transparent}
+.page-title{font-size:22px;margin:6px 0;font-family:Merriweather, serif}
+.page-sub{font-size:13px;color:var(--muted);margin:0 0 12px}
+
+.offers-list{display:flex;flex-direction:column;gap:12px}
+
+.tabs{display:flex;gap:8px;margin:10px 0 14px}
+.tab{flex:1;padding:10px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--muted);cursor:pointer;font-weight:500}
+.tab.active{background:var(--card);border-color:var(--border);color:var(--brand);box-shadow:0 4px 18px var(--shadow)}
+
+.card{display:flex;border:1px solid var(--border);border-radius:12px;background:var(--card);overflow:hidden;align-items:center;box-shadow:0 8px 20px var(--shadow)}
+.card-left{width:92px;display:flex;align-items:center;justify-content:center;padding:0;position:relative}
+
+.vertical-tag{background:linear-gradient(180deg,#FBF5F2,#F7EFEA);height:100%;display:flex;align-items:center;justify-content:center;padding:8px 6px;position:relative;z-index:1}
+.vertical-tag .tag-value{transform:rotate(-90deg);transform-origin:center;font-weight:700;color:var(--brand);white-space:nowrap}
+
+.gift-left{background:#FBF6F3;border-right:1px solid var(--border);padding:12px 10px;font-weight:700;color:var(--brand)}
+.payment-left{background:#EEF6FF;color:#0D4A8A;padding:10px 8px;font-weight:700;border-radius:6px}
+
+.card-middle{flex:1;padding:16px}
+.title{font-weight:700;font-size:15px}
+.subtitle{color:var(--muted);font-size:13px;margin-top:8px;line-height:1.35}
+.readmore{color:var(--brand);font-size:13px;margin-top:8px;font-weight:600}
+
+.card-right{display:flex;flex-direction:column;gap:8px;padding:12px;align-items:flex-end}
+.copy-btn,.collect-btn{padding:8px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+.copy-btn{background:transparent;border:1px solid var(--border);color:var(--brand)}
+.collect-btn{background:var(--brand);color:white}
+.collect-btn[disabled]{opacity:0.6}
+
+.copy-btn{min-width:68px}
+
+/* small responsive tweaks */
+@media(max-width:420px){
+  .bottom-nav{width:calc(100% - 24px)}
+}
+
+.bonus-cards{margin-top:18px}
+.bonus{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;border:1px solid var(--border);background:linear-gradient(90deg,#fff8f9,#f7fbff)}
+
+/* Sign-in box */
+.signin-box{display:flex;justify-content:space-between;align-items:center;padding:14px;border-radius:10px;background:linear-gradient(90deg,#fff,#fff);border:1px solid var(--border);box-shadow:0 6px 18px var(--shadow);margin-bottom:12px}
+.signin-box .signin-left{color:var(--muted);font-size:14px}
+.signin-box .signin-right{}
+.signin-primary{background:var(--brand);color:#fff;border:none;padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:700}
+.signin-box.signed-in{display:flex;align-items:center;gap:12px}
+
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.36);display:flex;align-items:center;justify-content:center;padding:20px;z-index:9999}
+.modal{background:#fff;padding:20px;border-radius:10px;max-width:420px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,0.18);position:relative;z-index:10000}
+.modal h3{margin:0 0 12px}
+.modal .field{display:flex;flex-direction:column;margin-bottom:8px}
+.modal .field label{font-size:13px;color:#444;margin-bottom:6px}
+.modal .field input{padding:10px;border:1px solid var(--border);border-radius:8px}
+.btn-muted{background:transparent;border:1px solid var(--border);padding:8px 12px;border-radius:8px}
+
+/* Back button */
+.back-btn{background:transparent;border:1px solid var(--border);padding:8px 12px;border-radius:10px;color:var(--brand);text-decoration:none;font-weight:600}
+.back-btn:hover{background:var(--pill)}
+
+/* Profile card */
+.profile-card{background:#fff;border:1px solid var(--border);padding:16px;border-radius:12px;box-shadow:0 10px 30px var(--shadow);margin-top:12px}
+.profile-top{display:flex;gap:12px;align-items:center}
+.avatar{width:72px;height:72px;border-radius:12px;background:#F2E4E1;color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px}
+.profile-meta h2{font-size:18px;margin:0}
+.booking-list{display:flex;flex-direction:column;gap:10px}
+.booking{padding:10px;border-radius:8px;background:linear-gradient(90deg,#fff,#fbfaf9);border:1px solid var(--border)}
+.b-title{font-weight:700}
+.b-sub{color:#666;font-size:13px}
+
+.bottom-actions{margin:18px 0;display:flex;justify-content:center}
+.unlock-btn{background:#8b1b3a;color:#fff;border:none;padding:12px 20px;border-radius:10px}
+
+/* Toast */
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;background:#111;color:#fff;padding:10px 14px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,0.12)}
+
+/* Mobile look */
+@media(min-width:420px){
+  .page-root{padding:18px}
+}
